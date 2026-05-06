@@ -15,6 +15,7 @@ sub EVENT_SAY {
       quest::selfcast(5521); # Hastening of Salik
       quest::selfcast(5409); # Talisman of Might
       quest::selfcast(5399); # Talisman of Sense
+      quest::selfcast(5405); # Talisman of Fortitude
       
     }
     if ($ulevel >=47) {
