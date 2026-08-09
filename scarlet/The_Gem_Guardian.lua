@@ -8,7 +8,7 @@ end
 
 function event_timer(e)
 	eq.stop_timer("delay");
-	eq.set_proximity(e.self:GetX()-18, e.self:GetX()+18, e.self:GetY()-18, e.self:GetY()+18, -999999, 999999, true);
+	eq.set_proximity(e.self:GetX()-25, e.self:GetX()+25, e.self:GetY()-25, e.self:GetY()+25, -999999, 999999, true);
 	eq.enable_proximity_say();
 end
 

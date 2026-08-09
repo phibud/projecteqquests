@@ -31,7 +31,7 @@ function event_say(e)
 		dz = e.other:CreateExpedition(ingenuity);
 
 		if dz.valid then
-			dz:AddReplayLockout(eq.seconds("2h"));
+			-- dz:AddReplayLockout(eq.seconds("2h"));
 		end
 	elseif e.message:findi("adaptation") then
 		eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Projection of Realms says, 'Can you modify your strategy in the heat of battle?  In an unpredictable and chaotic environment will you be able to adapt quickly to whatever adversities you face?  If you have this ability, now is the opportunity to prove your worth!'")

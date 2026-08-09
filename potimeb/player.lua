@@ -277,7 +277,7 @@ function event_say(e)
 			e.self:Message(MT.Cyan,"== {Add Lockouts by Phase Menu}");
 			e.self:Message(MT.Cyan,"== {Select Phase below to Add lockout}");
 			e.self:Message(MT.Cyan,"== {Use Repop Zone when completed with adjustments of lockouts to force phase start}");
-			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("al_p 2",false,"Phase 1")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("al_p 1",false,"Phase 1")));
 			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("al_p 2",false,"Phase 2")));
 			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("al_p 3",false,"Phase 3")));
 			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("al_p 4",false,"Phase 4")));

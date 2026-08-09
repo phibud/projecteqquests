@@ -111,7 +111,7 @@ Lockouts = {
 		[223001] = {RALLOSZEKTRASH,    		eq.seconds('132h')},
 		[223168] = {RALLOSZEK,    			eq.seconds('132h')},
 		[223201] = {QUARM,    				eq.seconds('132h')},
-		[999995] = {PHASE1COMPLETE,			eq.seconds('12h')},
+		[999995] = {PHASE1COMPLETE,			eq.seconds('24h')},
 		[999996] = {PHASE2COMPLETE,    		eq.seconds('132h')},
 		[999997] = {PHASE3COMPLETE,    		eq.seconds('132h')},
 		[999998] = {PHASE4COMPLETE,    		eq.seconds('132h')},
@@ -210,7 +210,7 @@ function event_signal(e)
 		current_phase = "Phase1";
 		-- send signal to flavor text NPC
 		eq.signal(223227,1); -- Emoter
-		UpdateFailTimer(60);
+		UpdateFailTimer(120);
 	-- signal 2 comes from the mobs in the final wave of each phase 1 event
 	elseif (e.signal == 2) then
 		-- check that all 5 phase 1 events are down.
@@ -225,9 +225,9 @@ function event_signal(e)
 				eq.unique_spawn(223242,0,0,190,1070,494,0); --phase_two_controller (223242)
 				eq.signal(223227,2); -- Emoter
 			elseif (expedition:HasLockout('Phase 2 Complete') and not expedition:HasLockout('Phase 3 Complete')) then -- Moving to Phase 3
-				SetupPhaseThree()
+				ControlPhaseTwo();
 			elseif (expedition:HasLockout('Phase 2 Complete') and expedition:HasLockout('Phase 3 Complete') and not expedition:HasLockout('Phase 4 Complete')) then -- Moving to Phase 4
-				SetupPhaseFour()
+				SetupPhaseFour();
 			elseif (expedition:HasLockout('Phase 2 Complete') and expedition:HasLockout('Phase 3 Complete') and expedition:HasLockout('Phase 4 Complete')
 				and not expedition:HasLockout('Phase 5 Complete')) then -- Moving to Phase 5
 				eq.signal(223097,5);

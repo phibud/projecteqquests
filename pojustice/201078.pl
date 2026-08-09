@@ -15,6 +15,7 @@ my $hold_event = 0;
 my $group = undef;
 my $count = undef;
 my $pc = undef;
+my $in_progress = undef;
 
 sub EVENT_SPAWN {
    #Depop any existing controllers

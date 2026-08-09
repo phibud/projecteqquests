@@ -34,9 +34,9 @@ function event_say(e)
 		eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Projection of Arcana says, 'While it can be admirable to defeat the opposition while in prime condition, a more accurate test of one's mettle is to tackle an opponent while fatigued and weary - yet still walk away victorious.  If you have this ability, now is the opportunity to prove your worth!'")
 		dz = e.other:CreateExpedition(efficiency);
 
-		if dz.valid then
-			dz:AddReplayLockout(eq.seconds("2h"));
-		end
+		-- if dz.valid then
+		-- 	dz:AddReplayLockout(eq.seconds("2h"));
+		-- end
 	elseif e.message:findi("specialization") then
 		eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Projection of Arcana says, 'At times it pays to be focused in your abilities, and at times it does not.  This trial will test your skill at using your strengths when they are most effective, and otherwise relying on your companions.  If you have this ability, now is the opportunity to prove your worth!'")
 		dz = e.other:CreateExpedition(specialization);

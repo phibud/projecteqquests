@@ -113,7 +113,9 @@ function Subversion_Timer(e)
 			-- DZ shuts down in 5 minutes
 			local dz = eq.get_expedition()
 			if dz.valid then
-				dz:AddReplayLockout(eq.seconds(lockout_loss))
+				-- Remove lockout
+				-- dz:AddReplayLockout(eq.seconds(lockout_loss))
+				
 				dz:SetSecondsRemaining(eq.seconds("5m"))
 			end
 		else 
@@ -136,9 +138,10 @@ function Subversion_Death(e)
 	eq.spawn2(306009,0,0,-212,273,71,40); -- NPC: Shell_of_the_Master
 
 	local dz = eq.get_expedition()
-	if dz.valid then
-		dz:AddReplayLockout(eq.seconds(lockout_win))
-	end
+	-- Remove lockout
+	-- if dz.valid then
+	-- 	dz:AddReplayLockout(eq.seconds(lockout_win))
+	-- end
 
 	local mpg_helper = require("mpg_helper");
 	mpg_helper.UpdateGroupTrialFlag(player_list, this_bit);

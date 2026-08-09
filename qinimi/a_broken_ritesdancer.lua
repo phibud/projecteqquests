@@ -1,6 +1,6 @@
 -- items: 62867, 62890, 62864, 62891
 function event_say(e)
-	if(e.message:findi("What about the rune fragments?")) then
+	if(e.message:findi("rune fragments")) then
 		if(e.other:GetFaction(e.self) <=2) then
 			e.other:Message(MT.Default,"The worn Taelosian looks up at you defiantly. She studies you a moment and nods. Whatever judgment she was making about you, you seem to have passed. She reaches into her ragged clothing and pulls out a small hunk of rock and hands it to you. She then quickly returns to work.");
 			e.other:SummonItem(62867); -- Item: Rune Fragment

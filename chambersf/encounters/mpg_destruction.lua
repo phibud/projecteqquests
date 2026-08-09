@@ -89,7 +89,7 @@ function Destruction_Timer(e)
 
 			local dz = eq.get_expedition()
 			if dz.valid then
-				dz:AddReplayLockout(eq.seconds(lockout_loss))
+				-- dz:AddReplayLockout(eq.seconds(lockout_loss))
 				dz:SetSecondsRemaining(eq.seconds("5m"))
 			end
 		else 
@@ -106,10 +106,10 @@ function Destruction_Death(e)
 	eq.stop_all_timers();
 	eq.spawn2(309068,0,0,-212,273,71,40); -- NPC: Shell_of_the_Master
 
-	local dz = eq.get_expedition()
-	if dz.valid then
-		dz:AddReplayLockout(eq.seconds(lockout_win))
-	end
+	-- local dz = eq.get_expedition()
+	-- if dz.valid then
+	-- 	dz:AddReplayLockout(eq.seconds(lockout_win))
+	-- end
 
 	local mpg_helper = require("mpg_helper");
 	mpg_helper.UpdateGroupTrialFlag(player_list, this_bit);

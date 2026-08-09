@@ -30,9 +30,9 @@ function event_say(e)
 		eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Projection of Body says, 'Mastery of a single armament of choice is not enough.  The time will come when the flexibility gained from proficiency in multiple weapon styles will turn the tide of a battle and the alternative is failure.  You must come to understand the value of weaponry.  If you have this ability, now is the opportunity to prove your worth!'")
 		dz = e.other:CreateExpedition(weaponry)
 
-		if dz.valid then
-			dz:AddReplayLockout(eq.seconds("2h"));
-		end
+		-- if dz.valid then
+		-- 	dz:AddReplayLockout(eq.seconds("2h"));
+		-- end
 	elseif e.message:findi("endurance") then
 		eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Projection of Body says, 'In a battle of attrition, an extended engagement, you must have the endurance to outlast your opposition.  When the defense is inpenetrable, your tenacity is more important than your offensive prowess.  If you have this ability, now is the opportunity to prove your worth!'")
 		dz = e.other:CreateExpedition(endurance);

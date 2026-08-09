@@ -97,6 +97,9 @@ function event_timer(e)
 		eq.spawn2(221013,0,0,-1748,91,202,330):SetAppearance(3);   --untargettable statue
 		eq.spawn2(221013,0,0,-1736,-125,202,454):SetAppearance(3); --untargettable statue
 		eq.spawn2(221013,0,0,-1958,-104,202,67):SetAppearance(3);  --untargettable statue
+
+		eq.depop_all(DEFILER_SMALL_TYPE);
+		eq.depop_all(DEFILER_LARGE_TYPE);
 	end
 end
 

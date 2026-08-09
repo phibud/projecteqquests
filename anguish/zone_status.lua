@@ -175,7 +175,7 @@ function Spawn_augs()
 		[5] = { 317077, 'Administrator_Charial', 20.75, 3811.7, 143, 128}
 	};
 	
-	local diceroll = math.random(1,100);
+	local diceroll = math.random(81,100);
 	if diceroll <= 20 then
 		num_to_spawn = 2;
 	elseif diceroll <= 50 then

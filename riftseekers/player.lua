@@ -21,3 +21,21 @@ function event_loot(e)
 		end		
 	end
 end
+
+function event_say(e)
+
+	if e.self:GetGM() then 
+		if e.message:find("help") then
+			e.self:Message(MT.Cyan,"RSS Queen controls available");
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("queen_repop",false,"Repop Queen")));
+			e.self:Message(MT.Guild,string.format("- [%s] -",eq.say_link("king_repop",false,"Repop King")));
+		elseif e.message:find("queen_repop") then
+			e.self:Message(MT.Cyan,"RSS Queen repopping");
+			eq.unique_spawn(334049, 0, 0, 206, -731, 313, 0);
+		elseif e.message:find("king_repop") then
+			e.self:Message(MT.Cyan,"RSS King repopping");
+			eq.unique_spawn(334041, 0, 0, -44, -603.0, -755.75, 0);
+		end
+	end
+end
+

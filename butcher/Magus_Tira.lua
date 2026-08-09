@@ -4,7 +4,7 @@ function event_say(e)
 	--Adventurers Stone
 	if(e.other:KeyRingCheck(41000) or e.other:HasItem(41000)) then
 		if(e.message:findi("hail")) then
-			e.self:Say("And how are you today, " .. e.other:GetName() .. "?  Ready to do some traveling?  Hurry up, then.  I have lots of things I need to do today.  Tell me where you would like to go and I will send you there.  I can send you to any of the other camps in [" .. eq.say_link("Everfrost",false,"Everfrost") .. "], [" .. eq.say_link("Commonlands",false,"Commonlands") .. "], [" .. eq.say_link("Nedaria's Landing",false,"Nedaria's Landing") .. "], [" .. eq.say_link("North Ro",false,"North Ro") .. "], or [" .. eq.say_link("South Ro",false,"South Ro") .. "].  Hopefully I won't burn my hands this time!  Long story, but my cohort, Gaelan Charhands, didn't tell me one of the words of the spell as a joke.  Apparently it's funny for a beautiful gnome like myself to get her hands singed.  I'll get him back some day!");
+			e.self:Say("And how are you today, " .. e.other:GetName() .. "?  Ready to do some traveling?  Hurry up, then.  I have lots of things I need to do today.  Tell me where you would like to go and I will send you there.  I can send you to any of the other camps in [" .. eq.say_link("Everfrost",false,"Everfrost") .. "], [" .. eq.say_link("Commonlands",false,"Commonlands") .. "], [" .. eq.say_link("Nedaria's Landing",false,"Nedaria's Landing") .. "], [" .. eq.say_link("North Ro",false,"North Ro") .. "], or [" .. eq.say_link("South Ro",false,"South Ro") .. "], or the Guild [Lobby].  Hopefully I won't burn my hands this time!  Long story, but my cohort, Gaelan Charhands, didn't tell me one of the words of the spell as a joke.  Apparently it's funny for a beautiful gnome like myself to get her hands singed.  I'll get him back some day!");
 		
 		elseif(e.message:findi("everfrost")) then
 			e.self:CastSpell(4180,e.other:GetID(),0,1); -- Spell: Teleport: Everfrost
@@ -19,7 +19,9 @@ function event_say(e)
 
 		elseif(e.message:findi("commonlands")) then
 			e.self:CastSpell(4176,e.other:GetID(),0,1); -- Spell: Teleport: East Commons
-		
+		elseif(e.message:findi("lobby")) then
+			e.other:MovePC(344,0.5,570,1,0); -- Zone: guildlobby
+	
 		end
 	else --no Adventurers Stone
 		if(e.message:findi("hail")) then

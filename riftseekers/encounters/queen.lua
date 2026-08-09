@@ -101,6 +101,7 @@ function QueenSpawn(e)
 		end
 	end
 
+	eq.debug("Queen Spawn function called...");
 	queen = e.self;
 	princesscount = 0;
 	add_sequence = 0;
@@ -111,6 +112,7 @@ function QueenSpawn(e)
 end
 
 function QueenSpawnDelayed(e) 
+	eq.debug("Queen Spawn Delayed function called...");
 	eq.unique_spawn(334048, 0, 0, 25, -725, 308.750000, 0);							-- Zulaqua
 	eq.unique_spawn(334047, 0, 0, 64.239998, -725.890015, 301.559998, 511.200012);	-- Yelnia
 	eq.unique_spawn(334045, 0, 0, 310.910004, -726.130005, 301.464203, 0);			-- Quellon
@@ -349,6 +351,11 @@ function AddTimer(e)
 		end
 	end
 end
+
+function event_spawn(e)
+	eq.debug("Queen event spawn function executing...");
+end
+
 
 function event_encounter_load(e)
 	eq.debug("Queen event loaded...");

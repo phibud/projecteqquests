@@ -88,10 +88,10 @@ function Fear_Timer(e)
 				eq.spawn2(304013, 0, 0, -212, 273, 71, 40); -- NPC: Shell_of_the_Master
 				eq.depop();
 
-				local dz = eq.get_expedition()
-				if dz.valid then
-					dz:AddReplayLockout(eq.seconds(lockout_win))
-				end
+				-- local dz = eq.get_expedition()
+				-- if dz.valid then
+				-- 	dz:AddReplayLockout(eq.seconds(lockout_win))
+				-- end
 
 				local mpg_helper = require("mpg_helper");
 				mpg_helper.UpdateGroupTrialFlag(player_list, this_bit);
@@ -100,7 +100,7 @@ function Fear_Timer(e)
 				eq.depop();
 				local dz = eq.get_expedition()
 				if dz.valid then
-					dz:AddReplayLockout(eq.seconds(lockout_loss))
+					-- dz:AddReplayLockout(eq.seconds(lockout_loss))
 					dz:SetSecondsRemaining(eq.seconds("5m"))
 				end
 			end

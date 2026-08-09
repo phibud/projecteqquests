@@ -31,9 +31,9 @@ function event_say(e)
 		eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Projection of Power says, 'To conquer worlds requires the capability to annihilate vast areas.  How much devastation can you inflict in as short a time as possible?  Can you cut a swathe in the ranks of your enemy and destroy them with impunity?  If you have this ability, now is the opportunity to prove your worth!'")
 		dz = e.other:CreateExpedition(destruction);
 
-		if dz.valid then
-			dz:AddReplayLockout(eq.seconds("2h"));
-		end
+		-- if dz.valid then
+		-- 	dz:AddReplayLockout(eq.seconds("2h"));
+		-- end
 	elseif e.message:findi("corruption") then
 		eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Projection of Power says, 'Prepare yourself for the greatest challenge of all.  The Mastery of Corruption will test your battle prowess as well as your strength of character.  Can you see through corruption and rout it out, or are you corrupt yourself?  The spoils of war include the chance to rewrite history.  The victor will decide who was right and who was wrong, but in the end - do such things even matter?'")
 		dz = e.other:CreateExpedition(corruption);

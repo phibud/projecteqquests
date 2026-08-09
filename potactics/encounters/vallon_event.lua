@@ -1,7 +1,7 @@
 -- Vallon Zek Event
 
-local vallon_id 		= 214083;
-local fake_vallon_id	= 214110;
+local vallon_id 		= 214111;
+local fake_vallon_id	= 214083;
 local vz_controller_id	= 214112;
 local pp_id				= 202368;
 local vz_counter		= 0;
@@ -65,6 +65,7 @@ function vz_controller_spawn(e)
 end
 
 function vz_controller_Signal(e)	-- send signal to controller to get event stage
+	eq.debug("vz_controller_signal" .. e.signal)
 	if e.signal == 1 then			-- returned signal that event not yet at final phase
 		if vz_counter < 5 and started then
 			eq.signal(vallon_id,1);	-- Vallon_Zek (214083)

@@ -11,7 +11,7 @@ function event_say(e)
 	elseif(e.message:findi("who are you")) then -- Part of Shaman Epic 1.0
 		e.self:Emote("glances up at you, fiddling with his bony fingers and mumbles, 'Mmmm me name's Froham..I'm 'ere [" .. eq.say_link("waitin") .. "] .");
 	elseif(e.message:findi("waitin")) then -- Part of Shaman Epic 1.0
-		e.self:Say("Just waitin' . . . it'll [be ere soon], I s'pose.");
+		e.self:Say("Just waitin' . . . it'll [be here soon], I s'pose.");
 	elseif(e.message:findi("be here soon")) then -- Part of Shaman Epic 1.0
 		e.self:Emote("obviously has trouble communicating. He shifts uncomfortably and says, 'Well I'm not sure, but it's real important. I been 'ere fer a [" .. eq.say_link("long time") .. "], a real long time. So I'll keep waitin' til it comes.");
 	elseif(e.message:findi("long time")) then -- Part of Shaman Epic 1.0

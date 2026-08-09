@@ -21,6 +21,18 @@ sub EVENT_SAY {
     if ($ulevel >=47) {
       quest::selfcast(3444); # Protection of Seasons
     }
+    if ($ulevel < 47) {
+      quest::selfcast(4053); # Blessing of Temperance
+      quest::selfcast(4089); # Guard of Vie
+      quest::selfcast(2525); # Harnessing of Spirit
+      quest::selfcast(3576); # Blessing of Faith
+      quest::selfcast(1570); # Talisman of Jasinth
+      quest::selfcast(0064); # Resist Magic
+      quest::selfcast(0160); # Nimble
+      quest::selfcast(1391); # Dead Men Floating
+
+
+    }
 		
     
     

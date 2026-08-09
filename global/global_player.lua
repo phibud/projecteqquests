@@ -283,8 +283,20 @@ vet_aa = {
 
 
 function event_connect(e)
-	grant_veteran_aa(e)
-	don.fix_invalid_faction_state(e.self)
+	grant_veteran_aa(e);
+	don.fix_invalid_faction_state(e.self);
+
+	
+    local client = e.self;
+    local qglobals = eq.get_qglobals(client);
+
+    if not qglobals["first_login"] or qglobals["first_login"] == "0" then
+
+        -- Set the global so it doesn't trigger again
+        eq.set_global("first_login", "1", 5, "F");  -- 5 = global (all zones), F = forever
+		eq.world_emote(15, string.format("Welcome %s to the server!", client:GetName()));
+    end
+
 end
 
 function grant_veteran_aa(e)
@@ -397,6 +409,10 @@ function event_level_up(e)
   if e.self:GetLevel() == 10 and eq.is_dragons_of_norrath_enabled() then
     eq.popup("", "<c \"#F0F000\">Welcome to level 10.</c><br><br>You are now able to begin the new player armor and weapon quests.  Speak with Castlen and Barrenzin or V`Lynn Renloe in the <c \"#66CCFF\">Plane of Knowledge</c> to begin.  One additional quest will become available to you at each level past level 10, so be sure to check back with these NPCs as you continue to gain experience.");
   end
+
+
+  eq.world_emote(15, string.format("%s has reached level %d!", e.self:GetName(), e.self:GetLevel()));
+  
 end
 
 test_items = {

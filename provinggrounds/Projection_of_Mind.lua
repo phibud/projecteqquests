@@ -29,9 +29,9 @@ function event_say(e)
 		eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Projection of Mind says, 'Fear is power.  An opponent whose resolve has been broken has already been defeated.  You must learn to invoke terror in the hearts of your enemies and destroy them as they cower in weakness.  If you have this ability, now is the opportunity to prove your worth!'")
 		dz = e.other:CreateExpedition(fear);
 
-		if dz.valid then
-			dz:AddReplayLockout(eq.seconds("2h"));
-		end
+		-- if dz.valid then
+		-- 	dz:AddReplayLockout(eq.seconds("2h"));
+		-- end
 	elseif e.message:findi("hatred") then
 		eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Projection of Mind says, 'Anger is a tool if you wield it correctly.  Invoking hatred in your enemies will provoke them into predictable and controllable behavior.  Can you harness your foes' hatred and twist it to your advantage?  If you have this ability, now is the opportunity to prove your worth!'")
 		dz = e.other:CreateExpedition(hatred);

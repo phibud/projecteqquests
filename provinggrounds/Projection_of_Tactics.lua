@@ -29,9 +29,9 @@ function event_say(e)
 		eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Projection of Tactics says, 'Knowing when to thwart your opponents using guile and subversion instead of brute force is critical to attaining true power.  Wealth can be amassed without ever unsheathing a blade.  The most ambitious rulers are overthrown not by their enemies on the battlefield, but by their 'allies' in the throne room.  If you understand my meaning, now is the opportunity to prove your worth!'")
 		dz = e.other:CreateExpedition(subversion);
 
-		if dz.valid then
-			dz:AddReplayLockout(eq.seconds("2h"));
-		end
+		-- if dz.valid then
+		-- 	dz:AddReplayLockout(eq.seconds("2h"));
+		-- end
 	elseif e.message:findi("Foresight") then
 		eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Projection of Tactics says, 'Perception and split-second reactions are not something you can acquire in training.  It's a gift learned on the battlefield, and the penalty for being a slow learner is a quick and decisive death.  Can you see the arrow as it sails toward your heart and sidestep out of the way?  If you have this ability, now is the opportunity to prove your worth!'")
 		dz = e.other:CreateExpedition(foresight);

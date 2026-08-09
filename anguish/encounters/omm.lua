@@ -228,7 +228,7 @@ function OMM_Timer(e)
 			if gaze_client:FindBuff(6494) then -- Clicked Mask and Found buff -- Spell: Reflective Skin
 				eq.zone_emote(MT.Yellow, "Mata Muram grows weak as he is afflicted with his own magic.");
 				make_attackable(e.self, false);
-				e.self:WipeHateList();
+				-- e.self:WipeHateList();
 				eq.set_timer("reengage", 18 * 1000);
 			else -- Did not click mask and get buff
 				e.self:CastSpell(5685, gaze_client:GetID()); -- Mata Muram's Gaze
@@ -360,13 +360,13 @@ function OMM_Timer(e)
 
 		eq.stop_timer("respawn_coerced");
 	elseif e.timer == "charm_mem_wipe" then
-		if CL1.valid and CL1:Charmed() then
-			CL1:WipeHateList();
-		end
+		-- if CL1.valid and CL1:Charmed() then
+		-- 	CL1:WipeHateList();
+		-- end
 
-		if CL2.valid and CL2:Charmed() then
-			CL2:WipeHateList();
-		end
+		-- if CL2.valid and CL2:Charmed() then
+		-- 	CL2:WipeHateList();
+		-- end
 	end
 end
 

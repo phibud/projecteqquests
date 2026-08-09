@@ -16,6 +16,8 @@ end
 function Tunat_Second_Death(e)
 	eq.signal(298223, 298055) -- NPC: zone_status
 	eq.signal(298223,2)       -- Unlock Doors
+
+	eq.world_emote(MT.Yellow, "Tunat`Muram Cuu Vauax has been vanquished! ");
 end
 
 function Tunat_Second_HP(e)

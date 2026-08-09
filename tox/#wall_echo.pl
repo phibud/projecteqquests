@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_PROXIMITY_SAY {
-  if ($text=~/yo ho. no sun!!/i) {
+  if ($text=~/yo ho. no sun/i) {
     $partone = 1;
   }
   elsif ($text=~/a skeleton's day is never done./i && $partone == 1) {

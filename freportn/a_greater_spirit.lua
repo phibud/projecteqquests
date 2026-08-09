@@ -39,4 +39,12 @@ function event_signal(e)
 	end
 end
 
+function event_timer(e)
+    if e.timer == "depop" then
+        eq.stop_timer("depop");
+        eq.signal(8118,0);
+    end
+end
+
+
 -- EOF a_greater_spirit
