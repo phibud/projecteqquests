@@ -90,6 +90,15 @@ end
 
 -- king hooks
 function KingSpawn(e)
+	local npc_list = eq.get_entity_list():GetNPCList();
+	for npc in npc_list.entries do
+		if npc.valid and npc:GetNPCTypeID() == 334041 and npc:GetID() ~= e.self:GetID() then
+			eq.debug("Duplicate King Gelaqua detected (ID: " .. e.self:GetID() .. "), depopping.");
+			e.self:Depop(false);
+			return;
+		end
+	end
+
 	king			= e.self;
 	princecount		= 0;
 	add_sequence	= 0;

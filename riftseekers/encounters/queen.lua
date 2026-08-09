@@ -92,6 +92,15 @@ end
 
 -- Queen hooks
 function QueenSpawn(e)
+	local npc_list = eq.get_entity_list():GetNPCList();
+	for npc in npc_list.entries do
+		if npc.valid and npc:GetNPCTypeID() == 334049 and npc:GetID() ~= e.self:GetID() then
+			eq.debug("Duplicate Queen Pyrilonis detected (ID: " .. e.self:GetID() .. "), depopping.");
+			e.self:Depop(false);
+			return;
+		end
+	end
+
 	queen = e.self;
 	princesscount = 0;
 	add_sequence = 0;
