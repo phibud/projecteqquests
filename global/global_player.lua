@@ -410,9 +410,12 @@ function event_level_up(e)
     eq.popup("", "<c \"#F0F000\">Welcome to level 10.</c><br><br>You are now able to begin the new player armor and weapon quests.  Speak with Castlen and Barrenzin or V`Lynn Renloe in the <c \"#66CCFF\">Plane of Knowledge</c> to begin.  One additional quest will become available to you at each level past level 10, so be sure to check back with these NPCs as you continue to gain experience.");
   end
 
-
-  eq.world_emote(15, string.format("%s has reached level %d!", e.self:GetName(), e.self:GetLevel()));
-  
+  local level = e.self:GetLevel();
+  local bucket_key = "level_emote_" .. level;
+  if e.self:GetBucket(bucket_key) == "" then
+    e.self:SetBucket(bucket_key, "1");
+    eq.world_emote(15, e.self:CleanName() .. " has achieved level " .. level .. "!");
+  end
 end
 
 test_items = {
