@@ -411,9 +411,9 @@ function event_level_up(e)
   end
 
   local level = e.self:GetLevel();
-  local bucket_key = "level_emote_" .. level;
-  if e.self:GetBucket(bucket_key) == "" then
-    e.self:SetBucket(bucket_key, "1");
+  local max_level = tonumber(e.self:GetBucket("max_level_reached")) or 0;
+  if level > max_level then
+    e.self:SetBucket("max_level_reached", tostring(level));
     eq.world_emote(15, e.self:CleanName() .. " has achieved level " .. level .. "!");
   end
 end
